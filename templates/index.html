@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('https://images.unsplash.com/photo-1568605114967-8130f3a36994');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            text-align: center;
+        }
+
+        form {
+            background-color: rgba(0,0,0,0.6);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input {
+            padding: 10px;
+            width: 90%;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        h3 {
+            margin-top: 30px;
+            color: #00ffcc;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏡 House Price Prediction</h1>
+    <form method="POST">
+        <input name="medinc" type="number" step="any" placeholder="💰 Median Income" required><br>
+        <input name="houseage" type="number" step="any" placeholder="🏗️ House Age (years)" required><br>
+        <input name="population" type="number" placeholder="👨‍👩‍👧‍👦 Population" required><br>
+        <input name="latitude" type="number" step="any" placeholder="🌍 Latitude" required><br>
+        <input name="avgrms" type="number" step="any" placeholder="🛏️ Avg. Number of Rooms" required><br>
+        <input name="avgocc" type="number" step="any" placeholder="👥 Average Occupancy" required><br>
+        <button type="submit">🔍 Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h3>🏠 Estimated Median House Price: ${{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
